@@ -1,5 +1,17 @@
-{% extends 'main/base.html' %}
-{% block title %}Home Page{% endblock %}
+{% extends 'main/base.html' %} {% block title %}Home Page{% endblock %}
 {% block content %}
-<h1>Home Page</h1>
-{% endblock %} 
+{% for post in posts %}
+<div class="card mt-2">
+    <div class="card-header"><strong>@{{ post.author.username }}</strong></div>
+    <div class="card-body d-flex flex-row justify-content-between">
+        <div>
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p>{{ post.description }}</p>
+        </div>
+        <div>Buttons</div>
+    </div>
+    <div class="card-footer text-muted">{{ post.created_at }}</div>
+</div>
+{% empty %}
+<p>You do not have posts yet. Feel free to add one!</p>
+{% endfor %} {% endblock %} 
