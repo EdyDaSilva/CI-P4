@@ -4,10 +4,9 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User, Group
 from .models import Post
-# Create your views here.
+
 
 @login_required(login_url="/login")
-# @permission_required("main.add_post", login_url="/login", raise_exception=True)
 def home(request):
     posts = Post.objects.all()
 
@@ -23,20 +22,22 @@ def home(request):
             user = User.objects.filter(id=user_id).first()
             if user and request.user.is_staff:
                 try:
-                    group = Group.objects.filter(name='default')
+                    group = Group.objects.get(name='default')
                     group.user_set.remove(user)
                 except:
                     pass
 
                 try:
-                    group = Group.objects.filter(name='mod')
+                    group = Group.objects.get(name='mod')
                     group.user_set.remove(user)
                 except:
                     pass
 
     return render(request, 'main/home.html', {"posts": posts})
 
+
 @login_required(login_url="/login")
+@permission_required("main.add_post", login_url="/login", raise_exception=True)
 def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
@@ -50,6 +51,7 @@ def create_post(request):
 
     return render(request, 'main/create_post.html', {"form": form})
 
+
 def sign_up(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -61,4 +63,3 @@ def sign_up(request):
         form = RegisterForm()
 
     return render(request, 'registration/sign_up.html', {"form": form})
-        
