@@ -1,0 +1,23 @@
+/* styles.css */
+
+/* Styling for the delete button */
+#btn-delete {
+    background-color: #dc3545; /* Red color for delete button */
+    color: white; /* White text color */
+    border: none; /* No border */
+}
+
+#btn-delete:hover {
+    background-color: #c82333; /* Darker red color on hover */
+}
+
+/* Styling for the ban user button */
+#btn-ban {
+    background-color: #ffc107; /* Yellow color for ban user button */
+    color: #212529; /* Dark text color */
+    border: none; /* No border */
+}
+
+#btn-ban:hover {
+    background-color: hsl(143, 100%, 44%); /* Darker yellow color on hover */
+}
