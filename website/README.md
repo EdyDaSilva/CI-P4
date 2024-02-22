@@ -30,5 +30,5 @@ To get your local environment set up with this application, follow these steps:
 
 ## Support
 
-For any issues, questions, or feedback, please contact us at support@expressyourself.com. We are here to help!
+For any issues, questions, or feedback, please contact us at ednedson@gmail.com. We are here to help!
 
