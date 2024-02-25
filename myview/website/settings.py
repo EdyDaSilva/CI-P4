@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import dj_database_url  # to progress with render
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,11 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-q3*t10od$!c0awb58ux=dr^m9*2p%cf@2%yn_hrd)^)51!3^gc'
+# SECRET_KEY = os.environ.get("SECRETE_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = os.environ.get("DEBUG", "False").lower == "true"
+
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
 
 # Application definition
@@ -92,9 +97,13 @@ DATABASES = {
 
 # render connection
 # DATABASES["default"] = dj_database_url("postgres://myviewadmin:NI1tKXESzva24Mix9TAqk6yEwYLGBTfk@dpg-cndr03un7f5s73bmpo3g-a.frankfurt-postgres.render.com/myview1")
+# database_url = os.environ("DATABASE_URL")
 DATABASES = {
     'default': dj_database_url.config(default='postgres://myviewadmin:NI1tKXESzva24Mix9TAqk6yEwYLGBTfk@dpg-cndr03un7f5s73bmpo3g-a.frankfurt-postgres.render.com/myview1')
 }
+# DATABASES = {
+#     'default': dj_database_url.config(database_url)
+# }
 
 
 # Password validation
