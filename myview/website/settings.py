@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url  # to progress with render
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -86,6 +88,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+# render connection
+# DATABASES["default"] = dj_database_url("postgres://myviewadmin:NI1tKXESzva24Mix9TAqk6yEwYLGBTfk@dpg-cndr03un7f5s73bmpo3g-a.frankfurt-postgres.render.com/myview1")
+DATABASES = {
+    'default': dj_database_url.config(default='postgres://myviewadmin:NI1tKXESzva24Mix9TAqk6yEwYLGBTfk@dpg-cndr03un7f5s73bmpo3g-a.frankfurt-postgres.render.com/myview1')
 }
 
 
