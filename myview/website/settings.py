@@ -88,12 +88,12 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # render connection
 # DATABASES["default"] = dj_database_url("postgres://myviewadmin:NI1tKXESzva24Mix9TAqk6yEwYLGBTfk@dpg-cndr03un7f5s73bmpo3g-a.frankfurt-postgres.render.com/myview1")
