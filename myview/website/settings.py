@@ -27,11 +27,11 @@ SECRET_KEY = 'django-insecure-q3*t10od$!c0awb58ux=dr^m9*2p%cf@2%yn_hrd)^)51!3^gc
 # SECRET_KEY = os.environ.get("SECRETE_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # DEBUG = os.environ.get("DEBUG", "False").lower == "true"
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ftp.edydasilva.com']
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS")
 
 
